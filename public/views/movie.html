@@ -1,0 +1,114 @@
+<style>
+div
+{
+padding:10px;
+}
+.alert {
+    padding: 20px;
+    color: #06121F;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    vertical-align:middle;
+}
+
+.closebtn:hover {
+    color: black;
+}
+</style>
+<div class="container">
+  <br/><br/><br/>
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Enter the details to be searched</h1>
+    </div>
+  <div class="col-lg-12">
+    <table height="100%" width="100%" class="table">
+      <tr><td>
+    NAME : <input type="text" ng-model="name"/>
+  </td></tr>
+      <tr><td>
+    YEAR : <input type="text" ng-model="year"/>
+  </td></tr>
+</table>
+  </div>
+  <div class="col-lg-12">
+  <button ng-click="searchMovie()" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-search"></span> SEARCH MOVIE</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <div class="alert info">
+      <table class="table jumbotron table-condensed table-bordered">
+        <tr>
+          <th>Poster</th>
+          <th>Title</th>
+          <th>Year</th>
+          <th>Runtime</th>
+          <th>Genre</th>
+          <th>Director</th>
+          <th>Actors</th>
+          <th>Language</th>
+        </tr>
+        <tr>
+      <td> <img ng-src="{{movieData.Poster}}" style="height=150px;width:120px"></td>
+      <td>  {{movieData.Title}}</td>
+      <td>  {{movieData.Year}}</td>
+      <td>  {{movieData.Runtime}}</td>
+      <td>  {{movieData.Genre}}</td>
+      <td>  {{movieData.Director}}</td>
+      <td>  {{movieData.Actors}}</td>
+      <td>  {{movieData.Language}}</td>
+      </tr>
+    </table>
+    </div>
+  </div
+</div>
+<div class="col-lg-12">
+<center>
+<button ng-click="addMovie()" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span> ADD MOVIE</button></center>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th>TITLE</th>
+        <th>YEAR</th>
+        <th>RUNTIME</th>
+        <th>GENRE</th>
+        <th>DIRECTOR</th>
+        <th>ACTORS</th>
+        <th>LANGUAGE</th>
+        <th>IMDBRATING</th>
+        <th>DELETE</th>
+      </tr>
+      <tr ng-repeat="t in movieData1">
+        <td>{{t.Title}}</td>
+        <td>{{t.Year}}</td>
+        <td>{{t.Runtime}}</td>
+        <td>{{t.Genre}}</td>
+        <td>{{t.Director}}</td>
+        <td>{{t.Actors}}</td>
+        <td>{{t.Language}}</td>
+        <td>{{t.imdbRating}}</td>
+        <td><button ng-click="deleteMovie(t)" class="btn btn-danger" onclick="this.parentElement.style.display='none';">DELETE  <span class="glyphicon glyphicon-remove"></span></button></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</div>

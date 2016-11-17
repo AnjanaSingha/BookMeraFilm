@@ -1,0 +1,41 @@
+div
+{
+  text-align: center;
+}
+ .carousel-inner > .item > img,.carousel-inner > .item > a > img {
+     width: 100%;
+     display: block;
+  height: auto;
+  line-height: 1;
+  margin: 0 auto;
+ }
+ body
+ {
+font-family: 'Merriweather', sans-serif;
+ }
+#noborder
+{
+  border:0px;
+}
+#noborder
+{
+  border:0px;
+  height:100%;
+}
+#positionC
+{
+  border:0px;
+  float:right;
+  padding:20px;
+  font-weight: bold;
+}
+input
+{
+  display: inline;
+}
+nav>a
+{
+  color : darkblue;
+  padding-left: 15px;
+  padding-right: 15px;
+}

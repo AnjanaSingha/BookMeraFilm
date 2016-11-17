@@ -1,0 +1,27 @@
+<div class="container">
+  <br/><br/><br/>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>FEEDBACK    <span class="glyphicon glyphicon-envelope"></span></h1>
+    </div>
+  </div><br/>
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table table-bordered table-hover" style="text-align:center">
+        <tr>
+          <th style="text-align:center">NAME</th>
+          <th style="text-align:center">SUBJECT</th>
+          <th style="text-align:center">EMAIL</th>
+          <th style="text-align:center">FEEDBACK</th>
+        </tr>
+        <tr ng-repeat="t in feedbackData">
+          <td>{{t.Name}}</td>
+          <td>{{t.Subject}}</td>
+          <td>{{t.Email}}</td>
+          <td>{{t.Content}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  </div>

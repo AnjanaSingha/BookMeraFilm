@@ -1,0 +1,91 @@
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <div class="container">
+      <br/><br/><br/>
+
+	<div class="row">
+		<div class="col-md-12 alert alert-success" >
+			<h2>
+				<b><i style="font-size:24px;text-align:left" class="fa">&#xf00c;  Thank you <span style="color:blue">{{customerName}}</span> for purchase!</i></b>
+			</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4">
+<p ng-repeat="i in moviedata"><img src="{{i.Poster}}" style="height=300px;width:250px"></p>
+<br/><br/><br/>
+<h5>
+  <b>BOOKING DATE & TIME</b>
+</h5>
+<p>
+<!-- {{movieDate}}, {{movieShow}}-->
+{{currentDate| date:'dd, MMM yyyy  hh:mm:ss a'}}
+</p>
+		</div>
+		<div class="col-md-4">
+			<h2>
+				{{movieName}}
+			</h2>
+      <br/>
+			<p>
+			{{movieTheatre}} , {{movieCity}}
+			</p>
+      <br/>
+    	<p>
+				{{movieShow}} | {{movieDate}}
+			</p>
+      <br/>
+      <p>
+        <b> Quantity: {{movieSeatsNo}}</b>
+      </p>
+      <br/><br/>
+      <p>
+        <img alt="Seat" src="Images/ticket.jpg" style="width:50px;height:50px;" class="img-thumbnail">&nbsp;&nbsp;<b>Seats : {{movieSeats1}} </b>
+      </p>
+      <br/><br/>
+    <table style="width:100%">
+      <tr>
+      <td><b>Ticket Price:</b></td>
+      <td><b>{{movieAmount}}</b></td>
+    </tr>
+    <tr>
+    <td><b>Internet handling fees:</b></td>
+    <td><b>{{cess}}</b></td>
+  </tr>
+  <tr>
+  <td colspan="2"><hr/></td>
+</tr>
+  <tr>
+    <td><font size="5px">Amount paid</font></td>
+    <td><font size="5px"> {{res}}</font></td>
+  </tr>
+  </table>
+		</div>
+
+		<div class="col-md-4">
+			<img alt="Barcode" src="Images/barcode.png" style="width:125px;height:125px;">
+      <p>
+
+      </p>
+      <p>
+        BOOKING ID
+      </p>
+      </p>
+    <b>  <p id="cid"></p></b>
+<br/><br/><center>
+    <form role="form" style="width:60%">
+      <div class="form-group">
+        <h4>FEEDBACK <span class="glyphicon glyphicon-pencil"></span></h4>
+        <input type="text" placeholder="Name" class="form-control" id="namee" name="namee"/><br/>
+        <input type="text" placeholder="Subject" class="form-control" id="subject" name="subject"/><br/>
+        <input type="email" placeholder="Email" class="form-control" id="emailid" name="emailid"/><br/>
+      <textarea class="form-control" id="feedback" name="feedback" row="5" cols="20" placeholder="Content"></textarea><br/>
+      <button ng-click="feedback()" class="btn btn-danger">
+        Give Feedback
+      </button>
+      </div>
+    </form></center>
+		</div>
+	</div>
+
+</div>

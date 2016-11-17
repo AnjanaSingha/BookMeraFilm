@@ -1,0 +1,99 @@
+
+.style1
+{
+  background:white;
+  height:30px;
+  width:30px;
+  border:1px solid black;
+  border-radius: 5px;
+  box-shadow: 6px 6px 2px #888888;
+}
+
+.style2
+{
+  background-color:#00b386;
+  border-style: inset;
+  border-radius:10px;
+  height:50px;
+  width:280px;
+}
+.h4style{
+  font-family: serif;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+th{
+  height:50px;
+    padding: 10px;
+
+}
+
+p{
+  align-self: center;
+}
+.paymentst{
+  font-size:18px;
+}
+.screen{
+  border-radius: 10px 20px 80px 80px;
+  color: white;
+  text-align: center;
+  background-color:grey;
+  font-family: serif;
+}
+
+
+td{
+  padding: 10px;
+
+}
+.booktd
+{
+  font-size:20px;
+font-family: serif;
+}
+.green{
+  background:#00b300;
+}
+.red{
+  background-color:red;
+}
+.grey{
+background-color: grey;
+
+}
+
+.disabledbutton {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+
+div.h3
+{
+  font-size: 50;
+  font-style:normal;
+  font-family: monospace;
+
+}
+
+
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}

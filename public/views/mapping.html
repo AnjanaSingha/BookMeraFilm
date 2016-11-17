@@ -1,0 +1,139 @@
+ <script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<!--<script>
+$(document).ready(function() {
+            $("#add").click(function () {
+              var text=($("#hh").val())+" : "+($("#mm").val())+" "+($("#t").val());
+          $('#res').append("<option value='"+text+"'>"+text+"</option>");
+         });
+       });
+</script>-->
+<div class="container
+
+  <br/><br/><br/>
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Enter the details to be inserted</h1>
+    </div>
+  <div class="col-lg-12">
+    <table height="100%" width="100%" class="table jumbotron table-condensed table-bordered">
+      <tr><td>
+    MOVIE NAME
+  </td>
+  <td colspan="2">
+    <div>
+<select ng-model="mapping.Title">
+   <option ng-repeat="o in movieData" value="{{o.Title}}">{{o.Title}}</option>
+</select>
+</div>
+  </td></tr>
+    <tr><td>
+    CITY
+  </td>
+  <td colspan="2">
+    <select ng-model="mapping.City">
+        <option ng-repeat="o in theatreData | unique: 'city'" value="{{o.city}}">{{o.city}}</option>
+    </select>
+  </td></tr>
+ <tr><td>
+    THEATRE
+  </td>
+  <td colspan="2">
+<select ng-model="mapping.Theatre">
+  <option  ng-repeat="t in theatreData | filter :mapping.City">{{t.name}}</option>
+</select>
+</td></tr>
+<tr>
+  <td>DATE</td>
+  <td colspan="2"><input ng-model="mapping.Date" type="text" id="myDate" name="myDate"></td>
+</tr>
+<tr>
+  <td>SHOW TIMINGS</td>
+  <td>
+<select id="hh">
+<option value="01">01</option>
+<option value="02">02</option>
+<option value="03">03</option>
+<option value="04">04</option>
+<option value="05">05</option>
+<option value="06">06</option>
+<option value="07">07</option>
+<option value="08">08</option>
+<option value="09">09</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+</select>
+<select id="mm">
+<option value="00">00</option>
+<option value="05">05</option>
+<option value="10">10</option>
+<option value="15">15</option>
+<option value="20">20</option>
+<option value="25">25</option>
+<option value="30">30</option>
+<option value="35">35</option>
+<option value="40">40</option>
+<option value="45">45</option>
+<option value="50">50</option>
+<option value="55">55</option>
+<option value="60">60</option>
+</select>
+<select id="t" >
+  <option value="am">am</option>
+  <option value="pm">pm</option>
+</select>
+<button id="add">ADD</button></td>
+  <td>  <select id="res" multiple></select>
+  </td>
+</tr>
+</table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12" style="height:30px"></div>
+</div>
+<div class="row">
+<div class="col-lg-12">
+<button ng-click="insertMapping()" class="btn btn-success btn-lg" style="padding: 10px 50px"><span class="glyphicon glyphicon-plus"></span> ADD MAPPING</button>
+</div>
+</div>
+<div class="row" style="margin-top:20px">
+  <div class="col-lg-12">
+    <table height="100%" width="100%" class="table jumbotron table-condensed table-bordered">
+    <tr>
+  <td>
+    <b>CITY</b>
+    <select ng-model="mapping1.City">
+        <option ng-repeat="o in theatreData | unique : 'city'" value="{{o.city}}">{{o.city}}</option>
+    </select>
+  </td>
+  <td>
+    <b>THEATRE</b>
+<select ng-model="mapping1.Theatre">
+  <option  ng-repeat="t in theatreData | filter :mapping1.City">{{t.name}}</option>
+</select>
+</td></tr>
+</table>
+</div>
+  <div class="col-lg-12">
+    <table class="table table-bordered table-hover">
+      <tr>
+        <th>TITLE</th>
+        <th>CITY</th>
+        <th>THEATRE</th>
+        <th>DATE</th>
+        <th>SHOWTIMINGS</th>
+        <th>DELETE</th>
+      </tr>
+        <tr ng-repeat="s in mappingData | filter : mapping1.Theatre">
+          <td>{{s.Title}}</td>
+          <td>{{s.City}}</td>
+          <td>{{s.Theatre}}</td>
+          <td>{{s.Date}}</td>
+          <td><span ng-repeat="i in s.ShowTimings">{{i}}<br/></span></td>
+          <td><button ng-click="deleteMapping(s)" class="btn btn-danger" onclick="this.parentElement.style.display='none';">DELETE  <span class="glyphicon glyphicon-remove"></span></button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

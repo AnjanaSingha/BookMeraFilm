@@ -1,0 +1,90 @@
+<style>
+.alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: #06121F;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin-bottom: 15px;
+}
+
+.alert.success {background-color: #4CAF50;}
+.alert.info {background-color: #A5CBF2;}
+.alert.warning {background-color: #ff9800;}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    vertical-align:middle;
+}
+
+div.row,div.col-lg-12,td,th
+{
+padding:10px;
+text-align:center;
+align:center;
+}
+
+.closebtn:hover {
+    color: black;
+}
+</style>
+<div class="container">
+  
+
+  <br/><br/><br/>
+  <div class="row">
+    <div class="col-lg-12">
+      <h1>Enter the details to be inserted</h1>
+    </div>
+  <div class="col-lg-12">
+    <center>
+    <table height="100%" width="50%" class="table">
+      <tr><th>NAME</th>
+        <td><input type="text" ng-model="theatre.name"/></td></tr>
+    <tr><th>CITY</th>
+      <td><input type="text" ng-model="theatre.city"/></td></tr>
+</table>
+</center>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-lg-12">
+<button ng-click="insertTheatre()" class="btn btn-success btn-lg" style="padding: 10px 50px"><span class="glyphicon glyphicon-plus"></span> ADD THEATRE</button>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h4>Search by city</h4>
+    <table height="100%" width="100%">
+      <tr><td>
+        <select ng-model="theatre.cityname">
+            <option ng-repeat="o in theatreData | unique: 'city'" value="{{o.city}}">{{o.city}}</option>
+        </select>
+  </td></tr></table>
+</div>
+</div>
+
+<div class="row" style="margin-top:20px">
+  <div class="col-lg-12">
+    <table class="table table-bordered table-hover table-striped">
+      <tr>
+        <th>NAME</th>
+        <th>CITY</th>
+        <th>DELETE</th>
+      </tr>
+        <tr ng-repeat="t in theatreData | filter : theatre.cityname">
+          <td>{{t.name}}</td>
+          <td>{{t.city}}</td>
+          <td><button ng-click="deleteTheatre(t)" class="btn btn-danger" onclick="this.parentElement.style.display='none';">DELETE  <span class="glyphicon glyphicon-remove"></span></button></td>
+    </div>
+  </div>
+</div>
